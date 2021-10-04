@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo</title>
+  <style>
+    html {
+      background:  beige;
+      font-family: sans-serif;
+      font-size: 1.25rem;
+    }
+
+    body {
+      width: 100%;
+      max-width: 40rem;
+      margin: 5rem auto;
+    }
+
+    p {
+      width: 100%;
+      max-width: 30rem;
+      text-align: center;
+      margin: auto;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-size: 1.25em;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    li {
+      font-size: 1em;
+    }
+
+    hr {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    strong {
+      font-size: 1.1em;
+      margin-right: 25px;
+    }
+
+    a {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="center">Currículo</h1>
+  <h3 class="center">{{ nombre }}</h3>
+  <p>{{ presentacion }}</p>
+  <h2>Datos Personales</h2>
+  <ul>
+    {% for i in datos %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Estudios</h2>
+  <ul>
+    {% for i in estudios %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Logros</h2>
+  <ul>
+    {% for i in logros %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Habilidades</h2>
+  <ul>
+    {% for i in habilidades %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Experiencia Laboral</h2>
+  <ul>
+    {% for i in experiencia %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Intereses</h2>
+  <ul>
+    {% for i in intereses %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Referencias</h2>
+  <ul>
+    {% for i in referencias %}
+    <li>{{ i }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

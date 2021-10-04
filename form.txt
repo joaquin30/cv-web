@@ -1,0 +1,9 @@
+nombre
+presentación
+datos personales
+estudios
+logros
+habilidades
+experiencia laboral
+intereses
+referencias
