@@ -12,7 +12,6 @@ def form():
     if req['user'] == 'root' and req['pass'] == '123':
         return render_template('form.html')
     else:
-        #flash('Usuario o contraseña incorrecta')
         return redirect('/')
 
 

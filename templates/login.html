@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h1 class="center-txt">Iniciar sesión</h1>
@@ -17,13 +17,6 @@
     <input type="password" id="pass" name="pass" class="form-input"><br>
     <br><input type="submit" class="form-button"><input type="reset" class="form-button">
     </form>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
   </div>
 </body>
 </html>
