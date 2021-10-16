@@ -1,28 +1,37 @@
-from flask import Flask, render_template, request
-from genform import genform
+from flask import Flask, render_template, request, flash, redirect
 
 app = Flask(__name__, template_folder='templates')
 
-def strip(s):
-    return s.strip()
-
 @app.route('/')
 def index():
-    return render_template('index.html')#, form=genform('form.txt'))
+    return render_template('login.html')
 
-@app.route('/cv', methods=['GET', 'POST'])
+@app.route('/form', methods=['post'])
+def form():
+    req = request.form
+    if req['user'] == 'root' and req['pass'] == '123':
+        return render_template('form.html')
+    else:
+        #flash('Usuario o contraseña incorrecta')
+        return redirect('/')
+
+
+def splitByComma(s):
+    return list(map(lambda x: x.strip(), s.split(',')))
+
+@app.route('/cv', methods=['post'])
 def cv():
     req = request.form
     return render_template('cv.html',
-        nombre=req['nombre'],
-        presentacion=req['presentación'],
-        datos=list(map(strip, req['datos personales'].split(','))),
-        estudios=list(map(strip, req['estudios'].split(','))),
-        logros=list(map(strip, req['logros'].split(','))),
-        habilidades=list(map(strip, req['habilidades'].split(','))),
-        experiencia=list(map(strip, req['experiencia laboral'].split(','))),
-        intereses=list(map(strip, req['intereses'].split(','))),
-        referencias=list(map(strip, req['referencias'].split(',')))
+        nombre = req['nombre'],
+        presentacion = req['presentación'],
+        datos = splitByComma(req['datos personales']),
+        estudios = splitByComma(req['estudios']),
+        logros = splitByComma(req['logros']),
+        habilidades = splitByComma(req['habilidades']),
+        experiencia = splitByComma(req['experiencia laboral']),
+        intereses = splitByComma(req['intereses']),
+        referencias = splitByComma(req['referencias'])
     )
 
 if __name__ == '__main__':

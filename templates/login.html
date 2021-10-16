@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="center-txt">Iniciar sesión</h1>
+  <div class="center-div">
+    <form action="/form" method="post">
+    <label for="user">Usuario</label>
+    <input type="text" id="user" name="user" class="form-input"><br>
+    <label for="pass">Contraseña</label>
+    <input type="password" id="pass" name="pass" class="form-input"><br>
+    <br><input type="submit" class="form-button"><input type="reset" class="form-button">
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+</body>
+</html>
