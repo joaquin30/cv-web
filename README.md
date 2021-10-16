@@ -12,3 +12,6 @@ Datos que soporta:
 - Habilidades
 - Intereses
 - Referencias
+
+**Usuario:** root
+**Contraseña:** 123
