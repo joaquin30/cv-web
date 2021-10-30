@@ -1,0 +1,24 @@
+.center-div {
+  display: flex;
+  justify-content: center;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-txt {
+  text-align: center;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert {
+  color: red;
+}
+
+body {
+  width: 100%;
+  max-width: 40rem;
+  margin: auto;
+}

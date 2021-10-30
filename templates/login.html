@@ -5,18 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <h1 class="center-txt">Iniciar sesión</h1>
+  <h1 class="center-txt">Generador de CV</h1>
+  <h3 class="center-txt"><a href="http://github.com/joaquin30/cv-web">Repositorio</a></h3>
+  <p class="center-txt">(usuario: root, contraseña: 123)</p>
   <div class="center-div">
     <form action="/form" method="post">
     <label for="user">Usuario</label>
-    <input type="text" id="user" name="user" class="form-input"><br>
+    <input type="text" id="user" name="user" class="form-input" required><br>
     <label for="pass">Contraseña</label>
-    <input type="password" id="pass" name="pass" class="form-input"><br>
-    <br><input type="submit" class="form-button"><input type="reset" class="form-button">
+    <input type="password" id="pass" name="pass" class="form-input" required><br>
+    <br><input type="submit" class="form-button" value="Entrar"><input type="reset" class="form-button">
     </form>
   </div>
+  {% for message in get_flashed_messages() %}
+    <p class="alert center-txt">Error: {{ message }}</p>
+  {% endfor %}
 </body>
 </html>

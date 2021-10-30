@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Currículo</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ css }}">
 </head>
 <body>
   <h1 class="center-txt">Currículo</h1>
   <h3 class="center-txt">{{ nombre }}</h3>
-  <p>{{ presentacion }}</p>
+  <p class="center-txt">{{ presentacion }}</p>
   <h2>Datos Personales</h2>
   <ul>
     {% for i in datos %}

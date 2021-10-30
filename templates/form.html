@@ -5,31 +5,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Currículo</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <h1 class="center-txt">Envía tus datos</h1>
   <h3 class="center-txt">(Separados por comas)</h3>
   <div class="center-div">
     <form action="/cv" method="post">
+
+      <label>Estilo de CV</label><br>
+      <input type="radio" id="latex" name="css" value="latex" required>
+      <label for="latex">LaTeX</label><br>
+      <input type="radio" id="classless" name="css" value="classless">
+      <label for="classless">Moderno</label><br>
+      <input type="radio" id="basic" name="css" value="basic">
+      <label for="basic">Oscuro</label><br>
+      <input type="radio" id="style" name="css" value="style">
+      <label for="style">Predeterminado</label><br>
+      <input type="radio" id="nocss" name="css" value="nocss">
+      <label for="nocss">Sin estilo</label><br>
+
       <label for="nombre">Nombre</label><br>
-      <input type="text" id="nombre" name="nombre" class="form-input"><br>
+      <input type="text" id="nombre" name="nombre" class="form-input" required><br>
       <label for="presentación">Presentación</label><br>
-      <input type="text" id="presentación" name="presentación" class="form-input"><br>
+      <input type="text" id="presentación" name="presentación" class="form-input" required><br>
       <label for="datos personales">Datos personales</label><br>
-      <input type="text" id="datos personales" name="datos personales" class="form-input"><br>
+      <input type="text" id="datos personales" name="datos personales" class="form-input" required><br>
       <label for="estudios">Estudios</label><br>
-      <input type="text" id="estudios" name="estudios" class="form-input"><br>
+      <input type="text" id="estudios" name="estudios" class="form-input" required><br>
       <label for="logros">Logros</label><br>
-      <input type="text" id="logros" name="logros" class="form-input"><br>
+      <input type="text" id="logros" name="logros" class="form-input" required><br>
       <label for="habilidades">Habilidades</label><br>
-      <input type="text" id="habilidades" name="habilidades" class="form-input"><br>
+      <input type="text" id="habilidades" name="habilidades" class="form-input" required><br>
       <label for="experiencia laboral">Experiencia laboral</label><br>
-      <input type="text" id="experiencia laboral" name="experiencia laboral" class="form-input"><br>
+      <input type="text" id="experiencia laboral" name="experiencia laboral" class="form-input" required><br>
       <label for="intereses">Intereses</label><br>
-      <input type="text" id="intereses" name="intereses" class="form-input"><br>
+      <input type="text" id="intereses" name="intereses" class="form-input" required><br>
       <label for="referencias">Referencias</label><br>
-      <input type="text" id="referencias" name="referencias" class="form-input"><br>
+      <input type="text" id="referencias" name="referencias" class="form-input" required><br>
       <br><input type="submit" class="form-button"><input type="reset" class="form-button">
     </form>
   </div>

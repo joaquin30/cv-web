@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect
+from flask.helpers import flash
 
 app = Flask(__name__, template_folder='templates')
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @app.route('/')
 def index():
@@ -12,16 +14,23 @@ def form():
     if req['user'] == 'root' and req['pass'] == '123':
         return render_template('form.html')
     else:
+        flash('Usuario o contraseña incorrecta')
         return redirect('/')
 
 
 def splitByComma(s):
-    return list(map(lambda x: x.strip(), s.split(',')))
+    return list(
+        filter(lambda x: len(x) > 0,
+        map(lambda x: x.strip(),
+        s.split(',')))
+    )
 
 @app.route('/cv', methods=['post'])
 def cv():
     req = request.form
+    css = req['css']
     return render_template('cv.html',
+        css = f'/static/{css}.css',
         nombre = req['nombre'],
         presentacion = req['presentación'],
         datos = splitByComma(req['datos personales']),
